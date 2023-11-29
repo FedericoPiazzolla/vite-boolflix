@@ -1,15 +1,25 @@
 <script>
+import { store } from '../store';
+
 export default {
   data() {
-    return{}
+    return{
+      store,
+    }
   }
 }
 </script>
 
 <template>
   <header>
-    <input type="text">
-    <button>invia</button>
+    <label for="search-input"></label>
+    <input 
+    type="text" 
+    id="search-input"
+    v-model="store.searchQuery"
+    @keyup.enter="$emit('sendQuery')"
+    >
+    <button @click="$emit(`sendQuery`)">invia</button>
   </header>
 </template>
 
