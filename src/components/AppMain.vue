@@ -1,12 +1,14 @@
 <script>
 import { store } from '../store';
+import AppMovieCard from './AppMovieCard.vue';
 
 export default {
-  data() {
-    return {
-      store,
-    }
-  }
+    data() {
+        return {
+            store,
+        };
+    },
+    components: { AppMovieCard },
 }
 </script>
 
@@ -18,7 +20,7 @@ export default {
       <h2>Movie</h2>
       <div class="row">
         <div class="col" v-for="movie in store.movieList" :key="movie.id">
-
+          <AppMovieCard :movie="movie"/>
         </div>
       </div>
     </div>

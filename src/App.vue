@@ -45,8 +45,8 @@ export default {
       console.log(store.searchQuery)
       this.getMovie()
       this.getSeries()
-      console.log(this.store.seriesList)
       console.log(this.store.movieList)
+      console.log(this.store.seriesList)
     },
   },
   created() {
