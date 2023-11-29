@@ -12,9 +12,14 @@ export default {
   methods: {
     getMovie() {
       axios
-      .get(this.store.baseUrl + this.store.apiKey)
+      .get(this.store.baseUrl, {
+        params: {
+          query: this.store.searchQuery,
+          api_key: this.store.apiKey,
+        }
+      })
       .then((resp) => {
-        console.log(resp.data);
+        console.log(resp);
       });
     }
   }
