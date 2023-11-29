@@ -2,6 +2,7 @@
 
 import axios from 'axios';
 import { store } from "./store"
+import AppHeader from './components/AppHeader.vue';
 
 export default {
   data() {
@@ -9,25 +10,31 @@ export default {
       store,
     }
   },
+  components: {
+    AppHeader,
+},
   methods: {
     getMovie() {
       axios
       .get(this.store.baseUrl, {
         params: {
-          query: this.store.searchQuery,
+          query: "ciao", //this.store.searchQuery,
           api_key: this.store.apiKey,
         }
       })
       .then((resp) => {
-        console.log(resp);
+        console.log(resp.data);
       });
     }
+  },
+  created() {
+    this.getMovie();
   }
 }
 </script>
 
 <template>
-
+<AppHeader />
 </template>
 
 <style >
