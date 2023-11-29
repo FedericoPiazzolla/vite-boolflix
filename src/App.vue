@@ -2,7 +2,9 @@
 
 import axios from 'axios';
 import { store } from "./store";
-import AppHeader from "./components/AppHeader.vue";
+
+import AppHeader from './components/AppHeader.vue';
+import AppMain from './components/AppMain.vue';
 
 export default {
   data() {
@@ -12,7 +14,8 @@ export default {
   },
   components: {
     AppHeader,
-},
+    AppMain,
+  },
   methods: {
     getMovie() {
       axios
@@ -55,6 +58,7 @@ export default {
 
 <template>
   <AppHeader @sendQuery="searchQueryElem"/>
+  <AppMain />
 </template>
 
 <style >
