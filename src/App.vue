@@ -1,8 +1,8 @@
 <script >
 
 import axios from 'axios';
-import { store } from "./store"
-import AppHeader from './components/AppHeader.vue';
+import { store } from "./store";
+import AppHeader from "./components/AppHeader.vue";
 
 export default {
   data() {
@@ -54,7 +54,7 @@ export default {
 </script>
 
 <template>
-<AppHeader @sendQuery="searchQueryElem"/>
+  <AppHeader @sendQuery="searchQueryElem"/>
 </template>
 
 <style >
