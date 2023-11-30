@@ -1,7 +1,7 @@
 <script>
 import { store } from '../store';
 
-export default{
+export default {
   data() {
     return {
       store,

@@ -42,11 +42,10 @@ export default {
       });
     },
     searchQueryElem() {
-      console.log(store.searchQuery)
-      this.getMovie()
-      this.getSeries()
-      console.log(this.store.movieList)
-      console.log(this.store.seriesList)
+      this.getMovie();
+      this.getSeries();
+      console.log(this.store.movieList);
+      console.log(this.store.seriesList);
     },
   },
   created() {
@@ -57,7 +56,7 @@ export default {
 </script>
 
 <template>
-  <AppHeader @sendQuery="searchQueryElem"/>
+  <AppHeader @sendQuery="searchQueryElem()"/>
   <AppMain />
 </template>
 
