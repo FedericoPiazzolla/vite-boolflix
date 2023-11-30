@@ -60,6 +60,7 @@ export default {
   <AppMain />
 </template>
 
-<style >
+<style lang="scss">
+@import '@fortawesome/fontawesome-free/css/all.css';
 
 </style>

@@ -17,8 +17,7 @@ export default {
       return new URL(`../assets/img/${lang}.png`, import.meta.url).href;
     },
     getVoteFive(vote) {
-      const voteFive = Math.round(vote / 2);
-      return voteFive;
+     return  Math.round(vote / 2);
     }
   },
   computed: {
@@ -44,16 +43,20 @@ export default {
 
     <!-- content -->
     <ul>
-      <li>{{ title }}</li>
-      <li>{{ originalTitle }}</li>
+      <li>Title: {{ title }}</li>
+      <li>Original Title: {{ originalTitle }}</li>
       <li v-if="isFlag">
+        lenguage:
         <img
           :src="getImgPath(movieObj.original_language)" 
           alt=""
         >
       </li>
-      <li v-else>{{ movieObj.original_language }}</li>
-      <li>{{ getVoteFive(movieObj.vote_average) }}</li>
+      <li v-else>Lenguage: {{ movieObj.original_language }}</li>
+      <li>
+        Vote: 
+        <i v-for="stars in getVoteFive(movieObj.vote_average)" class="fa-solid fa-star" style="color: darkgoldenrod;"></i>
+      </li>
     </ul>
     <!-- content -->
   </div>
