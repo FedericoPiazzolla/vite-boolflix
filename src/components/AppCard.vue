@@ -55,7 +55,12 @@ export default {
       <li v-else>Lenguage: {{ movieObj.original_language }}</li>
       <li>
         Vote: 
-        <i v-for="stars in getVoteFive(movieObj.vote_average)" class="fa-solid fa-star" style="color: darkgoldenrod;"></i>
+        <i 
+          v-for="star in getVoteFive(movieObj.vote_average)" 
+          class="fa-solid fa-star" 
+          style="color: darkgoldenrod;"
+        >
+        </i>
       </li>
     </ul>
     <!-- content -->
