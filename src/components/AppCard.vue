@@ -18,6 +18,9 @@ export default {
     },
     getVoteFive(vote) {
      return  Math.round(vote / 2);
+    },
+    getStarsEmpty(vote) {
+      return 5 - this.getVoteFive(vote);
     }
   },
   computed: {
@@ -59,8 +62,13 @@ export default {
           v-for="star in getVoteFive(movieObj.vote_average)" 
           class="fa-solid fa-star" 
           style="color: darkgoldenrod;"
-        >
-        </i>
+        ></i>
+
+        <i 
+        v-for="star in getStarsEmpty(movieObj.vote_average)"
+          class="fa-regular fa-star"
+          style="color: darkgoldenrod;"
+        ></i>
       </li>
     </ul>
     <!-- content -->
