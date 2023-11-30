@@ -1,15 +1,14 @@
 <script>
 import { store } from '../store';
-import AppMovieCard from './AppMovieCard.vue';
-import AppSeriesCard from './AppSeriesCard.vue';
+import AppCard from './AppCard.vue';
 
 export default {
-    data() {
-        return {
-          store,
-        };
-    },
-    components: { AppMovieCard, AppSeriesCard },
+  data() {
+    return {
+      store,
+    };
+  },
+  components: { AppCard },
 }
 </script>
 
@@ -21,7 +20,7 @@ export default {
       <h2>Movie</h2>
       <div class="row">
         <div class="col" v-for="movie in store.movieList" :key="movie.id">
-          <AppMovieCard :movie="movie"/>
+          <AppCard :movieObj="movie"/>
         </div>
       </div>
     </div>
@@ -32,7 +31,7 @@ export default {
       <h2>Series</h2>
       <div class="row">
         <div class="col" v-for="series in store.seriesList" :key="series.id">
-          <AppSeriesCard :series="series"/>
+          <AppCard :movieObj="series"/>
         </div>
       </div>
     </div>
