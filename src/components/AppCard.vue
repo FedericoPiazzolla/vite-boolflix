@@ -15,6 +15,10 @@ export default {
   methods: {
     getImgPath(lang) {
       return new URL(`../assets/img/${lang}.png`, import.meta.url).href;
+    },
+    getVoteFive(vote) {
+      const voteFive = Math.round(vote / 2);
+      return voteFive;
     }
   },
   computed: {
@@ -34,19 +38,26 @@ export default {
 </script>
 
 <template>
-  <img :src="`${imgUrl}${movieObj.backdrop_path}`" alt="">
-  <ul>
-    <li>{{ title }}</li>
-    <li>{{ originalTitle }}</li>
-    <li v-if="isFlag">
-      <img
-        :src="getImgPath(movieObj.original_language)" 
-        alt=""
-      >
-    </li>
-    <li v-else>{{ movieObj.original_language }}</li>
-    <li>{{ movieObj.vote_average }}</li>
-  </ul>
+  <div class="card">
+    <img v-if="movieObj.poster_path" :src="`${imgUrl}${movieObj.poster_path}`" alt="">
+    <img v-else src="https://techdenbd.com/backend/img/placeholder_image/Wyov47ZqxJID67GksbXO.gif">
+
+    <!-- content -->
+    <ul>
+      <li>{{ title }}</li>
+      <li>{{ originalTitle }}</li>
+      <li v-if="isFlag">
+        <img
+          :src="getImgPath(movieObj.original_language)" 
+          alt=""
+        >
+      </li>
+      <li v-else>{{ movieObj.original_language }}</li>
+      <li>{{ getVoteFive(movieObj.vote_average) }}</li>
+    </ul>
+    <!-- content -->
+  </div>
+  
 </template>
 
 <style lang="scss" scoped>
