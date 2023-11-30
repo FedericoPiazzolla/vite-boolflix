@@ -41,5 +41,9 @@ export default {
 
 </template>
 
-<style>
+<style lang="scss" scoped>
+.col {
+  border: 1px solid black;
+}
+
 </style>

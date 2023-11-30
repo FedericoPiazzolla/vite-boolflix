@@ -6,6 +6,7 @@ export default {
     return {
       store,
       flags: ["de", "en", "es", "fr", "it", "ja"],
+      imgUrl: "https://image.tmdb.org/t/p/w342"
     }
   },
   props: {
@@ -33,16 +34,21 @@ export default {
 </script>
 
 <template>
+  <img :src="`${imgUrl}${movieObj.backdrop_path}`" alt="">
   <ul>
     <li>{{ title }}</li>
     <li>{{ originalTitle }}</li>
-    <img
-    v-if="isFlag"
-     :src="getImgPath(movieObj.original_language)" 
-     alt="">
+    <li v-if="isFlag">
+      <img
+        :src="getImgPath(movieObj.original_language)" 
+        alt=""
+      >
+    </li>
     <li v-else>{{ movieObj.original_language }}</li>
     <li>{{ movieObj.vote_average }}</li>
   </ul>
 </template>
 
-<style></style>
+<style lang="scss" scoped>
+
+</style>
