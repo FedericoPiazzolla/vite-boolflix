@@ -42,7 +42,7 @@ export default {
 <template>
   <div class="card">
     <img v-if="movieObj.poster_path" :src="`${imgUrl}${movieObj.poster_path}`" alt="">
-    <img v-else src="https://techdenbd.com/backend/img/placeholder_image/Wyov47ZqxJID67GksbXO.gif">
+    <img class="not-found" v-else src="https://techdenbd.com/backend/img/placeholder_image/Wyov47ZqxJID67GksbXO.gif">
 
     <!-- content -->
     <ul>
@@ -77,5 +77,19 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+.card {
+  border: 1px solid black;
+  padding: .4rem;
 
+  img {
+    max-width: 100%;
+
+    &.not-found{
+      width: 345px;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+}
+  
 </style>

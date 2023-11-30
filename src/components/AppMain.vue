@@ -42,8 +42,14 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-.col {
-  border: 1px solid black;
-}
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    .col {
+       width: calc(100% / 4 - 1rem);
+    }
+  }
 
 </style>
