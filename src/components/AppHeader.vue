@@ -21,11 +21,12 @@ export default {
         <input 
         type="text" 
         id="search-input"
+        placeholder="cerca il tuo film o serie preferito"
         v-model="store.searchQuery"
         @keyup.enter="$emit('sendQuery')"
         >
 
-        <button @click="$emit(`sendQuery`)">Cerca</button>
+        <button @click="$emit(`sendQuery`)"><i class="fa-solid fa-magnifying-glass"></i></button>
       </div>
 
     </div>
@@ -56,14 +57,16 @@ header {
 
       input {
         padding: .4rem;
+        width: 250px;
+        border-radius: 10px;
         border: none;
       }
 
       button {
         padding: .4rem .8rem;
         border: none;
-        background-color: red;
-        color: white;
+        background-color: transparent;
+        color: red;
       }
     }
   }

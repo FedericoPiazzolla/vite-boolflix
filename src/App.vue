@@ -56,6 +56,7 @@ export default {
 <template>
   <div class="wrapper">
     <AppHeader @sendQuery="searchQueryElem()"/>
+    <h2 v-if="store.movieList.length == 0 || store.seriesList.length == 0">Scegli una serie o un film da iniziare...</h2>
     <AppMain />
   </div>
   
@@ -67,5 +68,14 @@ export default {
 
 .wrapper {
   height: 100vh;
+
+  h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: red;
+    font-size: 4rem;
+  }
 }
 </style>

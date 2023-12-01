@@ -25,7 +25,7 @@ export default {
       </div>
     </div>
     <!-- /movie section -->
-    <hr v-if="store.movieList.length > 0 || store.seriesList.length > 0">
+
     <!-- series section -->
     <div class="series">
       <h2 v-if="store.seriesList.length > 0">Series</h2>
@@ -45,12 +45,12 @@ export default {
 
   .container {
     height: calc(100vh - 100px);
-    overflow-x: auto;
+    padding: 1rem;
 
     h2 {
-      text-align: center;
-      padding: 3rem 0;
+      padding: 3rem 0 1rem ;
       color: red;
+      font-size: 3rem;
     }
 
     hr {
@@ -65,12 +65,28 @@ export default {
   }
   .row {
     display: flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 1rem;
+    align-items: stretch;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: .7rem;
+
+    &::-webkit-scrollbar {
+      height: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: red;
+      border-radius: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: rgb(53, 52, 52);
+      border-radius: 8px;
+    }
     .col {
-       width: 342px;
+      flex: 0 0 auto;
+      padding-left: 1rem;
+      width: 20%;
     }
   }
 
