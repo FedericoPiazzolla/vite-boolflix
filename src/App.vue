@@ -68,6 +68,22 @@ export default {
 
 .wrapper {
   height: 100vh;
+  overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+      width: 3px;
+      padding: 1px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: lightgray;
+      border-radius: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: rgb(53, 52, 52);
+      border-radius: 8px;
+    }
 
   h2 {
     display: flex;

@@ -93,6 +93,11 @@ export default {
   border: 1px solid white;
   max-width: 342px;
   overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      width: 0px;
+      border-radius: 10px;
+    }
   .card-content {
     position: absolute;
     color: white;

@@ -71,7 +71,7 @@ export default {
     padding-bottom: .7rem;
 
     &::-webkit-scrollbar {
-      height: 10px;
+      height: 6px;
     }
 
     &::-webkit-scrollbar-thumb {
