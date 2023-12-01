@@ -73,6 +73,10 @@ export default {
             style="color: darkgoldenrod;"
           ></i>
         </li>
+        <li>
+          <span>OverView:</span>
+          {{ movieObj.overview }}
+        </li>
       </ul>
     </div>
     
