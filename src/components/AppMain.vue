@@ -43,12 +43,18 @@ export default {
 
 <style lang="scss" scoped>
 
+  .container {
+    height: calc(100vh - 100px);
+    overflow-y: auto;
+  }
   .row {
     display: flex;
+    align-items: center;
+    justify-content: space-around;
     flex-wrap: wrap;
     gap: 1rem;
     .col {
-       width: calc(100% / 4 - 1rem);
+       width: 342px;
     }
   }
 

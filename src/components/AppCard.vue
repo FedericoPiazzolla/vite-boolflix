@@ -16,11 +16,8 @@ export default {
     getImgPath(lang) {
       return new URL(`../assets/img/${lang}.png`, import.meta.url).href;
     },
-    getVoteFive(vote) {
-     return  Math.ceil(vote / 2);
-    },
-    getStarsEmpty(vote) {
-      return 5 - this.getVoteFive(vote);
+    getVoteFive() {
+      return  Math.ceil(this.movieObj.vote_average / 2);
     }
   },
   computed: {
@@ -45,32 +42,30 @@ export default {
     <img class="not-found" v-else src="https://techdenbd.com/backend/img/placeholder_image/Wyov47ZqxJID67GksbXO.gif">
 
     <!-- content -->
-    <ul>
-      <li>Title: {{ title }}</li>
-      <li>Original Title: {{ originalTitle }}</li>
-      <li v-if="isFlag">
-        lenguage:
-        <img
-          :src="getImgPath(movieObj.original_language)" 
-          alt=""
-        >
-      </li>
-      <li v-else>Lenguage: {{ movieObj.original_language }}</li>
-      <li>
-        Vote: 
-        <i 
-          v-for="star in getVoteFive(movieObj.vote_average)" 
-          class="fa-solid fa-star" 
-          style="color: darkgoldenrod;"
-        ></i>
-
-        <i 
-        v-for="star in getStarsEmpty(movieObj.vote_average)"
-          class="fa-regular fa-star"
-          style="color: darkgoldenrod;"
-        ></i>
-      </li>
-    </ul>
+    <div class="card-content">
+      <ul>
+        <li>Title: {{ title }}</li>
+        <li>Original Title: {{ originalTitle }}</li>
+        <li v-if="isFlag">
+          lenguage:
+          <img
+            :src="getImgPath(movieObj.original_language)" 
+            alt=""
+          >
+        </li>
+        <li v-else>Lenguage: {{ movieObj.original_language }}</li>
+        <li>
+          Vote: 
+          <i 
+            v-for="star in 5" 
+            class="fa-star" 
+            :class="star <= getVoteFive() ? 'fa-solid' : 'fa-regular'"
+            style="color: darkgoldenrod;"
+          ></i>
+        </li>
+      </ul>
+    </div>
+    
     <!-- content -->
   </div>
   
@@ -78,8 +73,12 @@ export default {
 
 <style lang="scss" scoped>
 .card {
-  border: 1px solid black;
   padding: .4rem;
+  position: relative;
+  border-radius: 10px;
+  border: 1px solid white;
+  width: 100%;
+  overflow-y: auto;
 
   img {
     max-width: 100%;
@@ -89,6 +88,10 @@ export default {
       height: 100%;
       object-fit: contain;
     }
+  }
+
+  .card-content {
+    position: absolute;
   }
 }
   

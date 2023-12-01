@@ -44,8 +44,6 @@ export default {
     searchQueryElem() {
       this.getMovie();
       this.getSeries();
-      console.log(this.store.movieList);
-      console.log(this.store.seriesList);
     },
   },
   created() {
