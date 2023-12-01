@@ -13,15 +13,26 @@ export default {
 
 <template>
   <header>
-    <label for="search-input"></label>
-    <input 
-    type="text" 
-    id="search-input"
-    v-model="store.searchQuery"
-    @keyup.enter="$emit('sendQuery')"
-    >
-    <button @click="$emit(`sendQuery`)">invia</button>
+    <div class="container">
+      <h1>BOOLFLIX</h1>
+      <div class="search-section">
+
+        <label for="search-input"></label>
+        <input 
+        type="text" 
+        id="search-input"
+        v-model="store.searchQuery"
+        @keyup.enter="$emit('sendQuery')"
+        >
+
+        <button @click="$emit(`sendQuery`)">invia</button>
+      </div>
+
+    </div>
+
   </header>
 </template>
 
-<script></script>
+<script lang="scss" scoped>
+
+</script>

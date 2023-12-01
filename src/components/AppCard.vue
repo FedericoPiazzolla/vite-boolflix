@@ -17,7 +17,7 @@ export default {
       return new URL(`../assets/img/${lang}.png`, import.meta.url).href;
     },
     getVoteFive(vote) {
-     return  Math.round(vote / 2);
+     return  Math.ceil(vote / 2);
     },
     getStarsEmpty(vote) {
       return 5 - this.getVoteFive(vote);
@@ -41,7 +41,7 @@ export default {
 
 <template>
   <div class="card">
-    <img v-if="movieObj.poster_path" :src="`${imgUrl}${movieObj.poster_path}`" alt="">
+    <img class="poster" v-if="movieObj.poster_path" :src="`${imgUrl}${movieObj.poster_path}`" alt="">
     <img class="not-found" v-else src="https://techdenbd.com/backend/img/placeholder_image/Wyov47ZqxJID67GksbXO.gif">
 
     <!-- content -->

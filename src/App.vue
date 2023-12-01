@@ -56,11 +56,18 @@ export default {
 </script>
 
 <template>
-  <AppHeader @sendQuery="searchQueryElem()"/>
-  <AppMain />
+  <div class="wrapper">
+    <AppHeader @sendQuery="searchQueryElem()"/>
+    <AppMain />
+  </div>
+  
 </template>
 
 <style lang="scss">
+@use './style/general.scss';
 @import '@fortawesome/fontawesome-free/css/all.css';
 
+.wrapper {
+  height: 100vh;
+}
 </style>
