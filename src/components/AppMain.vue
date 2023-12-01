@@ -86,7 +86,7 @@ export default {
     .col {
       flex: 0 0 auto;
       padding-left: 1rem;
-      width: 20%;
+      width: calc(100% / 5);
     }
   }
 
