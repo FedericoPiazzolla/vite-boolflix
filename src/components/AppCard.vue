@@ -44,19 +44,28 @@ export default {
     <!-- content -->
     <div class="card-content">
       <ul>
-        <li>Title: {{ title }}</li>
-        <li>Original Title: {{ originalTitle }}</li>
+        <li>
+          <span>Title:</span> 
+          {{ title }}
+        </li>
+        <li>
+          <span>Original Title:</span>  
+          {{ originalTitle }}
+        </li>
         <li v-if="isFlag">
-          lenguage:
+          <span>lenguage:</span>
           <img
           class="flag"
             :src="getImgPath(movieObj.original_language)" 
             alt=""
           >
         </li>
-        <li v-else>Lenguage: {{ movieObj.original_language }}</li>
+        <li v-else>
+          <span>Lenguage:</span> 
+          {{ movieObj.original_language }}
+        </li>
         <li>
-          Vote: 
+          <span>Vote:</span> 
           <i 
             v-for="star in 5" 
             class="fa-star" 
@@ -78,7 +87,7 @@ export default {
   position: relative;
   border-radius: 10px;
   border: 1px solid white;
-  width: 100%;
+  max-width: 342px;
   overflow-y: auto;
   .card-content {
     position: absolute;
@@ -86,9 +95,16 @@ export default {
     top: 60px;
     left: 20px;
     display: none;
+    padding: 1rem;
 
     ul {
       list-style-type: none;
+
+      span {
+        font-weight: bolder;
+        font-style: italic;
+        color: wheat;
+      }
     }
     
   } 
