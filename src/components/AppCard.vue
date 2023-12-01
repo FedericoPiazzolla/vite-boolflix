@@ -49,6 +49,7 @@ export default {
         <li v-if="isFlag">
           lenguage:
           <img
+          class="flag"
             :src="getImgPath(movieObj.original_language)" 
             alt=""
           >
@@ -79,20 +80,50 @@ export default {
   border: 1px solid white;
   width: 100%;
   overflow-y: auto;
-
-  img {
-    max-width: 100%;
-
-    &.not-found{
-      width: 345px;
-      height: 100%;
-      object-fit: contain;
-    }
-  }
-
   .card-content {
     position: absolute;
+    color: white;
+    top: 60px;
+    left: 20px;
+    display: none;
+
+    ul {
+      list-style-type: none;
+    }
+    
+  } 
+  img { 
+    height: 450px;
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+
+    &.not-found{
+      height: 450px;
+      object-fit: contain;
+      background-color: white;
+    }
+    &.flag {
+      width: 30px;
+      height: 30px;
+    }
   }
+  &:hover {
+    img {
+      opacity: 20%;
+      filter: blur(10px);
+    }
+
+    .flag {
+      opacity: 100%;
+      filter: none;
+    }
+
+    .card-content {
+      display: block;
+    }
+  }
+  
 }
   
 </style>
