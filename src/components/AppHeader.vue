@@ -25,7 +25,7 @@ export default {
         @keyup.enter="$emit('sendQuery')"
         >
 
-        <button @click="$emit(`sendQuery`)">invia</button>
+        <button @click="$emit(`sendQuery`)">Cerca</button>
       </div>
 
     </div>
@@ -33,6 +33,39 @@ export default {
   </header>
 </template>
 
-<script lang="scss" scoped>
+<style lang="scss" scoped>
 
-</script>
+header {
+  height: 100px;
+  background-color: black;
+
+  .container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+
+    h1 {
+      color: red;
+    }
+
+    .search-section {
+      margin-right: 2rem;
+
+      input {
+        padding: .4rem;
+        border: none;
+      }
+
+      button {
+        padding: .4rem .8rem;
+        border: none;
+        background-color: red;
+        color: white;
+      }
+    }
+  }
+}
+</style>
