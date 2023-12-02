@@ -60,7 +60,13 @@ header {
         width: 250px;
         border-radius: 10px;
         border: none;
+        
+
+        &:focus {
+          outline: 2px solid red;
+        }
       }
+
 
       button {
         padding: .4rem .8rem;
