@@ -55,7 +55,7 @@ header {
     .search-section {
       margin-right: 2rem;
 
-      input {
+      #search-input {
         padding: .4rem;
         width: 250px;
         border-radius: 10px;

@@ -90,13 +90,20 @@ export default {
   padding: .4rem;
   position: relative;
   border-radius: 10px;
-  border: 1px solid white;
-  max-width: 342px;
   overflow-y: auto;
 
     &::-webkit-scrollbar {
-      width: 0px;
+      width: 2px;
       border-radius: 10px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: gray;
+      border-radius: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: rgb(53, 52, 52);
+      border-radius: 8px;
     }
   .card-content {
     position: absolute;
@@ -105,14 +112,21 @@ export default {
     left: 20px;
     display: none;
     padding: 1rem;
+    font-size: .8rem;
 
     ul {
       list-style-type: none;
+
+      li {
+        padding-bottom: .8rem;
+      }
 
       span {
         font-weight: bolder;
         font-style: italic;
         color: wheat;
+        display: block;
+        padding-bottom: .3rem;
       }
     }
     
